@@ -153,3 +153,31 @@ export const batchesAPI = {
   deleteSchedule: (batchId: number, scheduleId: number) =>
     api.delete(`/batches/${batchId}/schedule-class/${scheduleId}`),
 };
+
+export const guestsAPI = {
+  getAll: () => api.get('/guests'),
+  getById: (guestId: number) => api.get(`/guests/${guestId}`),
+  create: (data: {
+    name: string;
+    email: string;
+    phone?: string;
+    company?: string;
+    purpose?: string;
+  }) => api.post('/guests', data),
+  update: (guestId: number, data: {
+    name: string;
+    email: string;
+    phone?: string;
+    company?: string;
+    purpose?: string;
+  }) => api.put(`/guests/${guestId}`, data),
+  delete: (guestId: number) => api.delete(`/guests/${guestId}`),
+};
+
+export const adminAPI = {
+  sendEmail: (data: {
+    receiver_type: string;
+    subject: string;
+    message: string;
+  }) => api.post('/admin/send-email', data),
+};

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link as RouterLink } from 'react-router-dom';
 import {
   Box,
   Card,
@@ -121,7 +121,8 @@ const Login: React.FC = () => {
 
         <Box sx={{ mt: 3, textAlign: 'center' }}>
           <Link
-            href="#"
+            component={RouterLink}
+            to="/forgot-password"
             underline="hover"
             sx={{ color: 'primary.main', cursor: 'pointer' }}
           >

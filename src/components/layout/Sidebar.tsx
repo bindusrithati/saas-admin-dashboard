@@ -22,8 +22,8 @@ import {
   MenuBook as SyllabusIcon,
   Groups as BatchesIcon,
   Schedule as ScheduleIcon,
-  Chat as ChatIcon,
-  Settings as SettingsIcon,
+  PersonAdd as GuestIcon,
+  Email as EmailIcon,
   Logout as LogoutIcon,
   ChevronLeft as ChevronLeftIcon,
   ChevronRight as ChevronRightIcon,
@@ -41,13 +41,13 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
   { title: 'Dashboard', path: '/dashboard', icon: <DashboardIcon /> },
+  { title: 'Batches', path: '/batches', icon: <BatchesIcon /> },
   { title: 'Students', path: '/students', icon: <SchoolIcon /> },
   { title: 'Mentors', path: '/mentors', icon: <MentorIcon /> },
   { title: 'Syllabus', path: '/syllabus', icon: <SyllabusIcon /> },
-  { title: 'Batches', path: '/batches', icon: <BatchesIcon /> },
   { title: 'Class Schedule', path: '/schedule', icon: <ScheduleIcon /> },
-  { title: 'Chat', path: '/chat', icon: <ChatIcon /> },
-  { title: 'Settings', path: '/settings', icon: <SettingsIcon /> },
+  { title: 'Guests', path: '/guests', icon: <GuestIcon /> },
+  { title: 'Admin', path: '/admin', icon: <EmailIcon /> },
   { title: 'Users', path: '/users', icon: <PeopleIcon /> },
 ];
 

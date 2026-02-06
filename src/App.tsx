@@ -6,6 +6,8 @@ import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import MainLayout from './components/layout/MainLayout';
 import Login from './pages/Login';
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
 import Dashboard from './pages/Dashboard';
 import Users from './pages/Users';
 import Students from './pages/Students';
@@ -14,8 +16,8 @@ import SyllabusPage from './pages/Syllabus';
 import Batches from './pages/Batches';
 import BatchDetails from './pages/BatchDetails';
 import ClassSchedulePage from './pages/ClassSchedule';
-import ChatPage from './pages/Chat';
-import Settings from './pages/Settings';
+import Guests from './pages/Guests';
+import Admin from './pages/Admin';
 
 const queryClient = new QueryClient();
 
@@ -28,6 +30,8 @@ const App = () => (
           <Routes>
             {/* Public Routes */}
             <Route path="/login" element={<Login />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
 
             {/* Protected Routes */}
             <Route
@@ -40,15 +44,15 @@ const App = () => (
             >
               <Route index element={<Navigate to="/dashboard" replace />} />
               <Route path="dashboard" element={<Dashboard />} />
-              <Route path="users" element={<Users />} />
+              <Route path="batches" element={<Batches />} />
+              <Route path="batches/:batchId" element={<BatchDetails />} />
               <Route path="students" element={<Students />} />
               <Route path="mentors" element={<Mentors />} />
               <Route path="syllabus" element={<SyllabusPage />} />
-              <Route path="batches" element={<Batches />} />
-              <Route path="batches/:batchId" element={<BatchDetails />} />
               <Route path="schedule" element={<ClassSchedulePage />} />
-              <Route path="chat" element={<ChatPage />} />
-              <Route path="settings" element={<Settings />} />
+              <Route path="guests" element={<Guests />} />
+              <Route path="admin" element={<Admin />} />
+              <Route path="users" element={<Users />} />
             </Route>
 
             {/* 404 */}
